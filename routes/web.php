@@ -4,6 +4,8 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('frontend.detail');
 });
-Route::resource('/post',PostController::class);
+Route::get('/dashboard', function () {
+    return view('backend.index');
+});
