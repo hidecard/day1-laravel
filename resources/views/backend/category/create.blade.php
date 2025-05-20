@@ -6,11 +6,11 @@
             <h3 class="m-0 fw-bold text-primary">Create Category</h3>
         </div>
         <div class="card-body">
-            <form action="#" method="POST"> {{-- Replace '#' with action route --}}
-                {{-- @csrf --}}
+            <form action="{{route('category.store')}}" method="POST"> {{-- Replace '#' with action route --}}
+                @csrf
                 <div class="mb-3">
                     <label for="categoryName" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Movie">
+                    <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Name">
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary btn-sm">

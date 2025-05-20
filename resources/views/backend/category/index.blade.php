@@ -29,7 +29,7 @@
                             <td>{{ $category->name }}</td>
                             <td>
                                 <div class="d-flex gap-2">
-                                    <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <a href="{{route('category.edit',$category->id)}}" class="btn btn-outline-primary btn-sm">
                                         <i class="fas fa-edit me-1"></i> Edit
                                     </a>
                                     <button class="btn btn-outline-danger btn-sm">
