@@ -11,7 +11,7 @@
                 @method('PUT')
                 <div class="mb-3">
                     <label for="categoryName" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="categoryName" id="categoryName" placeholder="Name">
+                    <input type="text" class="form-control" value="{{$categories->name}}" name="categoryName" id="categoryName" placeholder="Name">
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary btn-sm">
