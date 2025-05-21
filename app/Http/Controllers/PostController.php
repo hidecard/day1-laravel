@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        return('This is Post List');
+        return view('backend.post.index');
+    }
+    public function create(){
+        return view('backend.post.create');
     }
 }
