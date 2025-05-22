@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
 Route::get('/backend', function () {
     return view('backend.index');
 });
@@ -15,7 +16,7 @@ Route::get('/backend', function () {
 Route::resource('backend/category', CategoryController::class);
 
 // for post 
-// Route::get('post/list',[PostController::class,'index'])->name('postlist');
-// Route::get('post/create',[PostController::class,'create'])->name('postcreate');
-// Route::post('post/store',[PostController::class,'store'])->name('poststore');
 Route::resource('backend/post', PostController::class);
+
+// for frontend
+Route::get('/',[HomeController::class,'index'])->name('index');
