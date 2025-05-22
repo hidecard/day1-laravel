@@ -17,24 +17,26 @@
             </tr>
         </thead>
         <tbody>
-           
+           @foreach ($posts as $post)
+               
+         
                 <tr>
-                    <td>1</td>
-                    <td>Html Basic</td>
-                    <td>Html</td>
-                    <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti possimus aperiam ullam praesentium dolor officia magni, corrupti cupiditate temporibus consequatur? Eveniet labore temporibus itaque, aut totam eaque. Quis, assumenda fugit.</td>
+                    <td>{{$post->id}}</td>
+                    <td>{{$post->name}}</td>
+                    <td>{{$post->category->name}}</td>
+                    <td>{{$post->description}}</td>
                     <td>
-                        <img src="" alt="Post Image" width="80">
+                        <img src="{{ asset('storage/' . $post->cover) }}" alt="Post Image" width="80">
                     </td>
                     <td>
-                        <a href="" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ route('post.edit', $post->id) }}" class="btn btn-warning btn-sm">Edit</a>
                         <form action="" method="POST" style="display:inline-block;">
                           
                             <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete?')">Delete</button>
                         </form>
                     </td>
                 </tr>
-          
+            @endforeach
         </tbody>
     </table>
 </div>

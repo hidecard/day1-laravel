@@ -14,4 +14,7 @@ class Post extends Model
         'description',
         'cover'
     ];
+     public function Category(){
+        return $this->belongsTo('App\Models\Categories');
+    }
 }
