@@ -39,8 +39,15 @@
                     </td>
                 </tr>
             @endforeach
+            
         </tbody>
     </table>
+    </table>
+
+<div class="d-flex justify-content-center">
+    {!! $posts->links('pagination::bootstrap-5') !!}
+</div>
+
 </div>
 
 @endsection
