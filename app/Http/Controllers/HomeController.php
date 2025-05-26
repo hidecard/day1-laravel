@@ -15,4 +15,9 @@ class HomeController extends Controller
         $latest_post = Post::latest('created_at')->take(7)->get();
         return view('frontend.index',compact('categories','posts','feature_post','latest_post'));
     }
+    public function detail($id){
+        $post = Post::find($id);
+        $latest_post = Post::latest('created_at')->take(7)->get();
+        return view('frontend.detail' , compact('post','latest_post'));
+    }
 }
