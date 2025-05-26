@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CategoryController;
 
 // Route::get('/', function () {
 //     return view('frontend.index');
@@ -21,3 +22,7 @@ Route::resource('backend/post', PostController::class);
 // for frontend
 Route::get('/',[HomeController::class,'index'])->name('index');
 Route::get('/detail/{id}',[HomeController::class,'detail'])->name('DetailPage');
+
+//for login
+Route::get('admin/login',[LoginController::class,'showLogin'])->name('ShowAdminLogin'); 
+Route::post('admin/login',[LoginController::class,'login'])->name('AdminLogin'); 

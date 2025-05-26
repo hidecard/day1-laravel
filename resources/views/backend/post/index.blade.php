@@ -25,7 +25,7 @@
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->category->name }}</td>
-                    <td>{{ Str::limit(strip_tags($post->description), 50) }}</td>
+                    <td>{{ (strip_tags($post->description)) }}</td>
                     <td>
                         <img src="{{ asset('storage/' . $post->cover) }}" alt="Post Image" width="80">
                     </td>
@@ -44,10 +44,7 @@
     </table>
     </table>
 
-<div class="d-flex justify-content-center">
-    {!! $posts->links('pagination::bootstrap-5') !!}
-</div>
-
+          {{$posts->links('pagination::bootstrap-5')}}
 </div>
 
 @endsection
