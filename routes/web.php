@@ -20,3 +20,4 @@ Route::resource('backend/post', PostController::class);
 
 // for frontend
 Route::get('/',[HomeController::class,'index'])->name('index');
+Route::get('/detail/{id}',[HomeController::class,'detail'])->name('DetailPage');
