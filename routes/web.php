@@ -28,5 +28,8 @@ Route::get('admin/login',[LoginController::class,'showLogin'])->name('ShowAdminL
 Route::post('admin/login',[LoginController::class,'login'])->name('AdminLogin'); 
 
 //for user
-Route::get('/user/login',[HomeController::class,'userLogin'])->name('UserLogin'); 
+Route::get('/user/login',[HomeController::class,'Login'])->name('UserLogin'); 
 Route::get('/user/register',[HomeController::class,'userRegister'])->name('UserRegister');
+
+Route::post('/user/store',[HomeController::class,'store'])->name('UserStore');
+Route::post('/user/storeLogin',[HomeController::class,'UserLogin'])->name('UserLogin');
