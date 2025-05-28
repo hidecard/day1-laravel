@@ -9,7 +9,7 @@ class AdminAuth
     public function handle($request, Closure $next)
     {
         if (Auth::check()) {
-            if (Auth::user()->is_admin) {
+            if (Auth::user()->is_admin === 1) {
                 return $next($request);
             }
             return redirect('/')->with('error', 'Unauthorized access!');
