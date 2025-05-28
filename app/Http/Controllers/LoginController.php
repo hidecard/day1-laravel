@@ -17,11 +17,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $key = 'login.'.$request->ip();
-        if (RateLimiter::tooManyAttempts($key, 5)) {
-            $seconds = RateLimiter::availableIn($key);
-            return back()->withErrors(['email' => "Too many attempts. Try again in $seconds seconds."]);
-        }
+       
 
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -43,10 +39,7 @@ class LoginController extends Controller
             }
         }
 
-        RateLimiter::hit($key);
-        return back()->withErrors([
-            'email' => 'The email or password is incorrect.',
-        ])->withInput();
+    
     }
     public function showAdminRegister()
     {
@@ -60,11 +53,7 @@ class LoginController extends Controller
             'password' => ['required', 'min:8', 'confirmed'],
         ]);
 
-        $key = 'register.' . $request->ip();
-        if (RateLimiter::tooManyAttempts($key, 5)) {
-            $seconds = RateLimiter::availableIn($key);
-            return back()->withErrors(['email' => "Too many attempts. Try again in $seconds seconds."]);
-        }
+      
 
         User::create([
             'name' => $request->name,
@@ -73,7 +62,7 @@ class LoginController extends Controller
             'is_admin' => 1, // New user is an admin
         ]);
 
-        RateLimiter::hit($key);
+
 
         return redirect()->route('backend.index')->with('success', 'Admin user created successfully!');
     }
