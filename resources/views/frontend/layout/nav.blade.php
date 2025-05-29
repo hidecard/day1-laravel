@@ -9,7 +9,7 @@
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                         @auth
-                        <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">Post</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('post.create') }}">Post</a></li>
                         <li class="nav-item"><span class="nav-link">{{ Auth::user()->name }}</span></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">Logout</a></li>
                         @else

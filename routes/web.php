@@ -36,4 +36,3 @@ Route::post('/user/register', [HomeController::class, 'store'])->name('UserStore
 // Logout (shared for admin and user)
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::resource('post', UserpostController::class);
