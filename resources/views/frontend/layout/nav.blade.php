@@ -8,7 +8,13 @@
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                        @auth
+                        <li class="nav-item"><a class="nav-link" href="{{ route('post.create') }}">Post</a></li>
+                        <li class="nav-item"><span class="nav-link">{{ Auth::user()->name }}</span></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">Logout</a></li>
+                        @else
+                        <li class="nav-item"><a class="nav-link" href="{{ route('UserLogin') }}">Login</a></li>
+                        @endauth
                     </ul>
                 </div>
             </div>

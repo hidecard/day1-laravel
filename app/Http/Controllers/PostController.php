@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('category')->get();
+        $posts = Post::with('category')->paginate(5);
         return view('backend.post.index', compact('posts'));
     }
 

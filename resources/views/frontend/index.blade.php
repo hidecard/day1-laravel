@@ -13,7 +13,7 @@
                             <div class="small text-muted"> {{$feature_post->created_at->diffForHumans()}}</div>
                             <h2 class="card-title">{{$feature_post->title}}</h2>
                             <p class="card-text"><?= Str::words($feature_post->description, 20, '...') ?></p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <a class="btn btn-primary" href="{{ route('DetailPage', $feature_post->id) }}">Read more →</a>
                         </div>
                     </div>
                     <!-- Nested row for non-featured blog posts-->
