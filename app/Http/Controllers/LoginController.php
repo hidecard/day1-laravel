@@ -66,5 +66,12 @@ class LoginController extends Controller
 
         return redirect()->route('backend.index')->with('success', 'Admin user created successfully!');
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/')->with('success', 'You have been logged out.');
+    }
 
 }
