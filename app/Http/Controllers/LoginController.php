@@ -74,4 +74,4 @@ class LoginController extends Controller
         return redirect('/')->with('success', 'You have been logged out.');
     }
 
-}
+}   
