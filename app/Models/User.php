@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin'
+    ];
+    protected $casts = [
+        'is_admin' => 'integer', // Cast is_admin to integer (0 = user, 1 = admin)
     ];
 
     /**
