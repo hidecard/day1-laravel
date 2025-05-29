@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserpostController;
 
 // Admin Login
 Route::get('admin/login', [LoginController::class, 'showLogin'])->name('ShowAdminLogin');
@@ -34,3 +35,5 @@ Route::post('/user/register', [HomeController::class, 'store'])->name('UserStore
 
 // Logout (shared for admin and user)
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::resource('post', UserpostController::class);

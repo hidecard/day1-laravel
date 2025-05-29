@@ -69,4 +69,5 @@ class HomeController extends Controller
 
         return back()->withErrors(['email' => 'Invalid credentials.']);
     }
+
 }
